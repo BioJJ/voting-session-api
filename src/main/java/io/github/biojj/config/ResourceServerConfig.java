@@ -15,7 +15,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/users").permitAll()
                 .antMatchers(
-                        "/api/schedule/**"
+                        "/api/schedule/**", "/api/voting-session/**"
                 )
                 .authenticated()
                 .anyRequest().denyAll();
