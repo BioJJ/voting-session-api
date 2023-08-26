@@ -1,6 +1,6 @@
 package io.github.biojj.modules.user.model;
 
-import io.github.biojj.modules.user.enums.ERole;
+import io.github.biojj.enums.ERole;
 import lombok.Data;
 
 import javax.persistence.*;
