@@ -49,7 +49,6 @@ public class ScheduleService {
                 .map(schedule -> {
                     schedule.setTitle(scheduleDTO.getTitle());
                     schedule.setDescription(scheduleDTO.getDescription());
-                    schedule.setCreationDate(scheduleDTO.getCreationDate());
                     schedule.setStatus(scheduleDTO.getStatus());
 
                     return repository.save(schedule);

@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -31,11 +32,15 @@ public class Schedule {
     private String description;
 
     @NotNull(message = "A data de início é obrigatória")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "creation_date", nullable = false)
     private LocalDateTime creationDate;
 
     @NotNull(message = "O status é obrigatório")
     @Column(name = "status", nullable = false)
     private Boolean status;
+
+    @PrePersist
+    public void prePersist() {
+        this.creationDate = LocalDateTime.now();
+    }
 }
