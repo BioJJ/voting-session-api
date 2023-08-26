@@ -15,11 +15,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/users").permitAll()
                 .antMatchers(
-                        "/api/schedule/**", "/api/voting-session/**", "/api/member/**"
+                        "/api/schedule/**", "/api/voting-session/**", "/api/member/**", "/api/vote/**"
                 )
                 .authenticated()
                 .anyRequest().denyAll();
-
         ;
     }
 }
